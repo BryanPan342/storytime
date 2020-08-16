@@ -26,7 +26,7 @@
   --text-margins: 10px 0px;
 
   --feesh-size: calc(15vw + 100px);
-  --ocean-base-metric: calc(100vw/15);
+  --ocean-base-metric: calc(100vw/20);
 
   --bezier: cubic-bezier(0,.5,0,1);
 }
