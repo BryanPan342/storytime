@@ -47,7 +47,6 @@ body {
 /* ---------------------------------------------------------- */
 
 .header {
-  overflow: hidden;
   opacity: 0;
   padding: var(--text-margins);
   position: relative;
@@ -61,7 +60,6 @@ body {
 }
 
 .info {
-  overflow: hidden;
   opacity: 0;
   padding: var(--text-margins);
   position: relative;
