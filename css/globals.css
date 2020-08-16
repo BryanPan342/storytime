@@ -25,7 +25,8 @@
   --text-offset: calc(100vw / 20);
   --text-margins: 10px 0px;
 
-  --feesh-size: 12vw;
+  --feesh-size: calc(15vw + 100px);
+  --ocean-base-metric: calc(100vw/15);
 
   --bezier: cubic-bezier(0,.5,0,1);
 }
@@ -72,11 +73,11 @@ body {
               animateRight 2s 1.5s forwards var(--bezier);
 }
 
-.info:nth-of-type(2) {
+.info:nth-child(2) {
   animation-delay: 1.5s;
 }
 
-.info:nth-of-type(3) {
+.info:nth-child(3) {
   animation-delay: 2.5s;
 }
 
@@ -167,6 +168,28 @@ a:hover:after {
 
 .feesh {
   height: var(--feesh-size);
-  z-index: 2;
-  margin: 50vh auto;
+  z-index: 90;
+  margin: auto auto 12vh auto;
+}
+
+.ocean-floor {
+  position: fixed;
+  bottom: 0px;
+  z-index: 3;
+}
+
+.ocean-bubbles:nth-of-type(2) {
+  left: calc(var(--ocean-base-metric));
+}
+
+.ocean-bubbles:nth-of-type(3) {
+  right: calc(var(--ocean-base-metric));
+}
+
+.coral:nth-child(4) {
+  left: calc(var(--ocean-base-metric) * 2);
+}
+
+.coral:nth-child(5) {
+  right: calc(var(--ocean-base-metric) * 2);
 }
