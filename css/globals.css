@@ -5,7 +5,8 @@
 2.  Text Classes
 3.  Anchor Tags
 4.  Title
-5.  Ocean
+5.  Hero
+6.  Ocean
 
 */
 
@@ -153,7 +154,23 @@ a:hover:after {
   margin: 100px auto;
 }
 
-/* 5. Ocean
+/* 5. Hero
+/* ---------------------------------------------------------- */
+
+.hero-wrapper{
+  display: flex;
+  position: fixed;
+  z-index: 90;
+  width: 100vw;
+  height: 100vh;
+}
+
+.feesh {
+  height: var(--feesh-size);
+  margin: auto auto 12vh auto;
+}
+
+/* 6. Ocean
 /* ---------------------------------------------------------- */
 
 .ocean {
@@ -186,7 +203,6 @@ a:hover:after {
   z-index: 20;
 }
 
-
 .light-coral:nth-child(3) {
   left: calc(var(--ocean-base-metric) * 3.5);
 }
@@ -207,15 +223,10 @@ a:hover:after {
   right: calc(var(--ocean-base-metric) * .1);
 }
 
-.hero-wrapper{
-  display: flex;
-  position: fixed;
-  z-index: 90;
-  width: 100vw;
-  height: 100vh;
+.polyps {
+  z-index: 30;
 }
 
-.feesh {
-  height: var(--feesh-size);
-  margin: auto auto 12vh auto;
+.polyps:nth-child(7) {
+  left: calc(var(--ocean-base-metric) * 2);
 }
