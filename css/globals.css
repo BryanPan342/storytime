@@ -1,4 +1,113 @@
+/* Table of Contents
+/* ------------------------------------------------------------
+
+1.  Globals
+2.  Text Classes
+3.  Anchor Tags
+4.  Title
+
+*/
+
+/* 1. Globals - Variables | Body | Site Wrapper
+/* ---------------------------------------------------------- */
+
+:root {
+  --healthy-background: linear-gradient(180deg, #47B2EE 0%, rgba(255, 255, 255, 0) 100%), #0F5FAF;
+  --bleached-background: linear-gradient(180deg, #8DC3E2 0%, rgba(255, 255, 255, 0) 100%), #3A638C;
+ 
+  --header-size: 72px;
+  --info-size: 24px;
+  --font-color: #ffffff;
+  --underlay-offest: 8px;
+  --healthy-font-underlay: #1261B0;
+  --bleached-font-underlay: #3C658D;
+  --text-offset: calc(100vw / 20);
+  --text-margins: 10px 0px;
+
+  --bezier: cubic-bezier(0,.5,0,1);
+}
+
 body {
   overflow: hidden;
-  background-color: #3FA7D6;
+  margin: 0;
+  padding: 0;
+}
+
+.site-wrapper {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background: var(--healthy-background);
+}
+
+/* 2. Text Classes
+/* ---------------------------------------------------------- */
+
+.header {
+  padding: var(--text-margins);
+  position: relative;
+  font-family: Russo One;
+  font-size: var(--header-size);
+  color: var(--font-color);
+  letter-spacing: 0.05em;
+}
+
+.info {
+  padding: var(--text-margins);
+  position: relative;
+  font-family: Work Sans;
+  font-size: var(--info-size);
+  color: var(--font-color);
+}
+
+.shadow {
+  text-shadow: calc(-1 * var(--underlay-offest)) var(--underlay-offest) 0 var(--healthy-font-underlay);
+}
+
+.offset {
+  left: var(--text-offset);
+}
+
+/* 3. Anchor Tags
+/* ---------------------------------------------------------- */
+
+a {
+  color: var(--font-color);
+  position: relative;
+  text-decoration: none;
+  transition: font-weight .4s var(--bezier);
+}
+
+a:hover {
+  font-weight: bold;
+  right: 0;
+  text-decoration: none;
+}
+
+a:hover:after {
+  right: 0;
+}
+
+a:after {
+  border-radius: 1em;
+  border-top: .1em solid;
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: .05em;
+  left: 0;
+  transition: right .4s var(--bezier);
+}
+
+a:hover:after {
+  right: 0;
+}
+
+/* 4. Title
+/* ---------------------------------------------------------- */
+
+.title {
+  display: block;
+  margin: 150px auto;
+  z-index: 99;
 }
