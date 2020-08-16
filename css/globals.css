@@ -44,20 +44,30 @@ body {
 /* ---------------------------------------------------------- */
 
 .header {
+  overflow: hidden;
+  opacity: 0;
   padding: var(--text-margins);
   position: relative;
   font-family: Russo One;
   font-size: var(--header-size);
   color: var(--font-color);
   letter-spacing: 0.05em;
+  transform: translateX(-20%);
+  animation: fadeIn 1.5s 1.5s forwards var(--bezier),
+              animateRight 1.5s 1.5s forwards var(--bezier);
 }
 
 .info {
+  overflow: hidden;
+  opacity: 0;
   padding: var(--text-margins);
   position: relative;
   font-family: Work Sans;
   font-size: var(--info-size);
   color: var(--font-color);
+  transform: translateX(-20%);
+  animation: fadeIn 2s 2s forwards var(--bezier), 
+              animateRight 2s 2s forwards var(--bezier);
 }
 
 .shadow {
@@ -66,6 +76,16 @@ body {
 
 .offset {
   left: var(--text-offset);
+}
+
+@keyframes animateRight {
+  0% { transform: translateX(-20%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* 3. Anchor Tags
