@@ -26,7 +26,7 @@
   --text-margins: 10px 0px;
 
   --feesh-size: calc(15vw + 100px);
-  --ocean-base-metric: calc(100vw/20);
+  --ocean-base-metric: calc(100vw/30);
 
   --bezier: cubic-bezier(0,.5,0,1);
 }
@@ -162,14 +162,8 @@ a:hover:after {
   position: fixed;
   display: flex;
   z-index: 2;
-  width: 100vw;
+  width: 200vw;
   height: 100vh;
-}
-
-.feesh {
-  height: var(--feesh-size);
-  z-index: 90;
-  margin: auto auto 12vh auto;
 }
 
 .ocean-floor {
@@ -178,18 +172,31 @@ a:hover:after {
   z-index: 3;
 }
 
-.ocean-bubbles:nth-of-type(2) {
-  left: calc(var(--ocean-base-metric));
+.ocean-bubbles:nth-of-type(1) {
+  left: calc(var(--ocean-base-metric) * .5);
 }
 
-.ocean-bubbles:nth-of-type(3) {
-  right: calc(var(--ocean-base-metric));
+.ocean-bubbles:nth-of-type(2) {
+  right: calc(var(--ocean-base-metric) *.5);
+}
+
+.coral:nth-child(3) {
+  left: calc(var(--ocean-base-metric) * 3);
 }
 
 .coral:nth-child(4) {
-  left: calc(var(--ocean-base-metric) * 2);
+  right: calc(var(--ocean-base-metric) * 3);
 }
 
-.coral:nth-child(5) {
-  right: calc(var(--ocean-base-metric) * 2);
+.hero-wrapper{
+  display: flex;
+  position: fixed;
+  z-index: 90;
+  width: 100vw;
+  height: 100vh;
+}
+
+.feesh {
+  height: var(--feesh-size);
+  margin: auto auto 12vh auto;
 }
