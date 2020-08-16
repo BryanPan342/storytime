@@ -172,6 +172,10 @@ a:hover:after {
   z-index: 3;
 }
 
+.ocean-bubbles {
+  z-index: 3;
+}
+
 .ocean-bubbles:nth-of-type(1) {
   left: calc(var(--ocean-base-metric) * .5);
 }
@@ -180,12 +184,29 @@ a:hover:after {
   right: calc(var(--ocean-base-metric) *.5);
 }
 
-.coral:nth-child(3) {
-  left: calc(var(--ocean-base-metric) * 3);
+.light-coral {
+  z-index: 20;
 }
 
-.coral:nth-child(4) {
+
+.light-coral:nth-child(3) {
+  left: calc(var(--ocean-base-metric) * 3.5);
+}
+
+.light-coral:nth-child(4) {
   right: calc(var(--ocean-base-metric) * 3);
+}
+
+.dark-coral {
+  z-index: 10;
+}
+
+.dark-coral:nth-child(5) {
+  left: calc(var(--ocean-base-metric) * .1);
+}
+
+.dark-coral:nth-child(6) {
+  right: calc(var(--ocean-base-metric) * .1);
 }
 
 .hero-wrapper{
