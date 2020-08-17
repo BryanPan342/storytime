@@ -28,8 +28,31 @@
 
   --feesh-size: calc(12vw + 100px);
   --ocean-base-metric: calc(1vw + 50px);
+  --feesh-bottom: 15vh;
 
   --bezier: cubic-bezier(0,.5,0,1);
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px){
+  :root {
+    --healthy-background: linear-gradient(180deg, #47B2EE 0%, rgba(255, 255, 255, 0) 100%), #0F5FAF;
+    --bleached-background: linear-gradient(180deg, #8DC3E2 0%, rgba(255, 255, 255, 0) 100%), #3A638C;
+   
+    --header-size: 36px;
+    --info-size: 16px;
+    --font-color: #ffffff;
+    --underlay-offest: 4px;
+    --healthy-font-underlay: #1261B0;
+    --bleached-font-underlay: #3C658D;
+    --text-offset: calc(100vw / 20);
+    --text-margins: 5px 0px;
+  
+    --feesh-size: calc(12vw + 100px);
+    --ocean-base-metric: calc(1vw + 50px);
+    --feesh-bottom: 30vh;
+  
+    --bezier: cubic-bezier(0,.5,0,1);
+  }
 }
 
 body {
@@ -147,17 +170,11 @@ a:hover:after {
 /* 4. Title
 /* ---------------------------------------------------------- */
 
-.title-wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 99;
-  display: grid;
-}
-
 .title {
+  z-index: 99;
+  position: absolute;
   display: block;
-  margin: 100px auto;
+  margin: 100px 50px;
 }
 
 /* 5. Hero
@@ -173,7 +190,7 @@ a:hover:after {
 
 .feesh {
   height: var(--feesh-size);
-  margin: auto auto 12vh auto;
+  margin: auto auto var(--feesh-bottom) auto;
 }
 
 /* 6. Ocean
@@ -196,6 +213,8 @@ a:hover:after {
 }
 
 .ocean-bubbles {
+  width: 600px;
+  height: auto;
   z-index: 3;
 }
 
@@ -208,22 +227,34 @@ a:hover:after {
 }
 
 .light-coral {
+  height: auto;
+  width: 475px;
+  bottom: -10px;
+  transform-origin: 50% 100% 0;
   z-index: 20;
 }
 
 .light-coral:nth-child(3) {
+  animation: sway-alternate 17s alternate infinite;
   left: calc(var(--ocean-base-metric) * 3.5);
 }
 
 .light-coral:nth-child(4) {
+  animation: sway-alternate 20s alternate infinite;
   left: calc(var(--ocean-base-metric) * 12);
 }
 
 .dark-coral {
+  height: auto;
+  width: 475px;
   z-index: 10;
+  bottom: -10px;
+  transform-origin: 50% 100% 0;
+  animation: sway 13s infinite;
 }
 
 .dark-coral:nth-child(5) {
+  animation: sway 10s infinite;
   left: calc(var(--ocean-base-metric) * .1);
 }
 
@@ -232,9 +263,21 @@ a:hover:after {
 }
 
 .polyps {
+  width: 190px;
+  height: auto;
   z-index: 30;
 }
 
 .polyps:nth-child(7) {
   left: calc(var(--ocean-base-metric) * 2);
+}
+
+@keyframes sway {
+  0%, 100%{ transform: rotate(-2deg);}
+  50%{ transform: rotate(2deg); }
+}
+
+@keyframes sway-alternate {
+  0%, 100%{ transform: rotate(2deg);}
+  50%{ transform: rotate(-2deg); }
 }
