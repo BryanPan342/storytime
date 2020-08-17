@@ -8,10 +8,10 @@ var dark_corals = document.getElementsByClassName("dark-coral");
 var polypses = document.getElementsByClassName("polyps");
 
 function resize() {
-  console.log('resized');
   var bubble_width = min(600, screen.width);
   var coral_width = min(475, screen.width * .74 );
   var polyps_width = min(250, screen.width * .266 );
+
   Array.from(ocean_bubbles).forEach(function (bubble) { 
     bubble.style.width =`${bubble_width}px`;
   }); 
@@ -25,5 +25,15 @@ function resize() {
     polyps.style.width =`${polyps_width}px`;
   }); 
 }
+
 resize();
 window.onresize = resize;
+
+function handleScroll() {
+  Array.from(document.getElementsByClassName("parallax")).forEach(function (element) { 
+    console.log(window.scrollX);
+    element.style.transform = `translateX(${window.scrollX/6}px)`;
+  }); 
+};
+
+window.addEventListener('scroll', handleScroll, { passive: true });
