@@ -29,6 +29,7 @@
   --feesh-size: calc(12vw + 100px);
   --ocean-base-metric: calc(1vw + 50px);
   --feesh-bottom: 15vh;
+  --floor-offset: 0px;
 
   --bezier: cubic-bezier(0,.5,0,1);
 }
@@ -50,9 +51,14 @@
     --feesh-size: calc(12vw + 100px);
     --ocean-base-metric: calc(1vw + 50px);
     --feesh-bottom: 30vh;
+    --floor-offset: 15px;
   
     --bezier: cubic-bezier(0,.5,0,1);
   }
+}
+
+html {
+  overflow-y: hidden;
 }
 
 body {
@@ -208,7 +214,7 @@ a:hover:after {
 .ocean-floor {
   /* position: absolute; */
   position: absolute;
-  bottom: 0px;
+  bottom: var(--floor-offset);
   z-index: 3;
 }
 
@@ -229,7 +235,7 @@ a:hover:after {
 .light-coral {
   height: auto;
   width: 475px;
-  bottom: -10px;
+  bottom: calc(var(--floor-offset) - 5px);
   transform-origin: 50% 100% 0;
   z-index: 20;
 }
@@ -248,7 +254,7 @@ a:hover:after {
   height: auto;
   width: 475px;
   z-index: 10;
-  bottom: -10px;
+  bottom: calc(var(--floor-offset) - 5px);
   transform-origin: 50% 100% 0;
   animation: sway 13s infinite;
 }
