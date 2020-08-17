@@ -27,7 +27,7 @@
   --text-margins: 10px 0px;
 
   --feesh-size: calc(12vw + 100px);
-  --ocean-base-metric: calc(100vw/30);
+  --ocean-base-metric: calc(1vw + 50px);
 
   --bezier: cubic-bezier(0,.5,0,1);
 }
@@ -204,7 +204,7 @@ a:hover:after {
 }
 
 .ocean-bubbles:nth-of-type(2) {
-  left: calc(var(--ocean-base-metric) * 20);
+  left: calc(var(--ocean-base-metric) * 13);
 }
 
 .light-coral {
@@ -216,7 +216,7 @@ a:hover:after {
 }
 
 .light-coral:nth-child(4) {
-  left: calc(var(--ocean-base-metric) * 18);
+  left: calc(var(--ocean-base-metric) * 12);
 }
 
 .dark-coral {
@@ -228,7 +228,7 @@ a:hover:after {
 }
 
 .dark-coral:nth-child(6) {
-  left: calc(var(--ocean-base-metric) * 22);
+  left: calc(var(--ocean-base-metric) * 14);
 }
 
 .polyps {
