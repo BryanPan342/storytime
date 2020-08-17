@@ -1,4 +1,3 @@
-const { disableBodyScroll } = require('./bodyScrollLock');
 function min(a, b) {
   return a < b ? a : b;
 }
@@ -27,5 +26,4 @@ function resize() {
   }); 
 }
 resize();
-disableBodyScroll(document.querySelector(body));
 window.onresize = resize;
