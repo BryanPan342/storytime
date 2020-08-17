@@ -51,7 +51,7 @@
     --feesh-size: calc(12vw + 100px);
     --ocean-base-metric: calc(1vw + 50px);
     --feesh-bottom: 30vh;
-    --floor-offset: 15px;
+    --floor-offset: 0px;
   
     --bezier: cubic-bezier(0,.5,0,1);
   }
@@ -207,7 +207,7 @@ a:hover:after {
   position: absolute;
   display: flex;
   z-index: 2;
-  width: 200vw;
+  width: 2000px;
   height: 100vh;
 }
 
