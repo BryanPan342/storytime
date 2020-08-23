@@ -30,9 +30,10 @@ resize();
 window.onresize = resize;
 
 function handleScroll() {
-  Array.from(document.getElementsByClassName("parallax")).forEach(function (element) { 
-    console.log(window.scrollX);
-    element.style.transform = `translateX(${window.scrollX/6}px)`;
+  var scrollLeft = window.pageXOffset
+  Array.from(document.getElementsByClassName("parallax")).forEach(function (element) {
+    console.log(scrollLeft); 
+    element.style.transform = `translateX(${scrollLeft*.1}px)`;
   }); 
 };
 
