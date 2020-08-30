@@ -7,6 +7,8 @@
 4.  Title
 5.  Hero
 6.  Ocean
+7.  Ocean Floor
+8.  Ocean Background
 
 */
 
@@ -212,46 +214,45 @@ a:hover:after {
   height: calc(100vh + 3px);
 }
 
-.ocean-floor {
-  /* position: absolute; */
+.layer {
+  height: 100%;
+}
+
+/* 7. Ocean Floor
+/* ---------------------------------------------------------- */
+
+#ocean-floor {
+  width: 5000px;
   position: absolute;
-  bottom: var(--floor-offset);
+  bottom: -0;
   z-index: 3;
 }
 
-.ocean-bubbles {
-  width: 600px;
-  height: auto;
-  z-index: -18;
-}
-
-.ocean-bubbles:nth-of-type(1) {
-  left: calc(var(--ocean-base-metric) * .5);
-}
-
-.ocean-bubbles:nth-of-type(2) {
-  left: calc(var(--ocean-base-metric) * 13);
-}
-
 .light-coral {
-  height: auto;
-  width: 475px;
+  position: absolute;
   bottom: calc(var(--floor-offset) - 5px);
   transform-origin: 50% 100% 0;
   z-index: -10;
 }
 
-.light-coral:nth-child(3) {
+#light-coral-1 {
+  width: 475px;
+  height: 490px;
   animation: sway-alternate 17s alternate infinite;
   left: calc(var(--ocean-base-metric) * 3.5);
+  background-image: url(../assets/light-coral-1.png);
 }
 
-.light-coral:nth-child(4) {
+#light-coral-2 {
+  width: 450px;
+  height: 450px;
   animation: sway-alternate 20s alternate infinite;
   left: calc(var(--ocean-base-metric) * 12);
+  background-image: url(../assets/light-coral-2.png);
 }
 
 .dark-coral {
+  position: absolute;
   height: auto;
   width: 475px;
   z-index: -15;
@@ -260,23 +261,29 @@ a:hover:after {
   animation: sway 13s infinite;
 }
 
-.dark-coral:nth-child(5) {
+#dark-coral-1 {
   animation: sway 10s infinite;
   left: calc(var(--ocean-base-metric) * .1);
+  background-image: url(../assets/dark-coral-1.png);
 }
 
-.dark-coral:nth-child(6) {
+.dark-coral-2 {
+  animation: sway 13s infinite;
   left: calc(var(--ocean-base-metric) * 14);
+  background-image: url(../assets/dark-coral-2.png);
 }
 
 .polyps {
+  bottom: 0;
+  position: absolute;
   width: 190px;
   height: auto;
-  z-index: 0;
+  z-index: -1;
 }
 
-.polyps:nth-child(7) {
+#polyps-1 {
   left: calc(var(--ocean-base-metric) * 2);
+  background-image: url(../assets/polyps.png);
 }
 
 @keyframes sway {
@@ -287,4 +294,31 @@ a:hover:after {
 @keyframes sway-alternate {
   0%, 100%{ transform: rotate(3deg);}
   50%{ transform: rotate(-3deg); }
+}
+
+/* 8. Ocean Background
+/* ---------------------------------------------------------- */
+
+#ocean-background-bubbles {
+  width: 5000px;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: -20;
+}
+
+.ocean-bubbles {
+  width: 600px;
+  height: auto;
+  z-index: -25;
+}
+
+#ocean-bubbles-1 {
+  left: calc(var(--ocean-base-metric) * .5);
+  background-image: url(../assets/ocean-bubbles-1.png);
+}
+
+#ocean-bubbles-2 {
+  left: calc(var(--ocean-base-metric) * 13);
+  background-image: url(../assets/ocean-bubbles-2.png);
 }

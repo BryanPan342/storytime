@@ -31,13 +31,17 @@
         <img class='feesh'src='assets/feesh.svg'>
       </div>
       <div class='ocean'>
-        <img class='ocean-bubbles ocean-floor parallax' src='assets/ocean-bubbles-1.svg'>
-        <img class='ocean-bubbles ocean-floor parallax' src='assets/ocean-bubbles-2.svg'>
-        <img class='light-coral ocean-floor' src='assets/light-pink-coral-1.svg'>
-        <img class='light-coral ocean-floor' src='assets/light-pink-coral-2.svg'>
-        <img class='dark-coral ocean-floor' src='assets/dark-pink-coral-1.svg'>
-        <img class='dark-coral ocean-floor' src='assets/dark-pink-coral-2.svg'>
-        <img class='polyps ocean-floor' src='assets/polyps.svg'>
+        <div class='layer' id='ocean-floor'>
+          <div class='light-coral' id='light-coral-1'></div>
+          <div class='light-coral' id='light-coral-2'></div>
+          <div class='dark-coral' id='dark-coral-1'></div>
+          <div class='dark-coral' id='dark-coral-2'></div>
+          <div class='polyps' id='polyps-1'></div>
+        </div>
+        <div class='layer' id='ocean-background-bubbles'>
+          <div class='ocean-bubbles' id='ocean-bubbles-1'></div>
+          <div class='ocean-bubbles' id='ocean-bubbles-2'>
+        </div>
       </div>
     </div>
     <script src='scripts/main.js'></script>
