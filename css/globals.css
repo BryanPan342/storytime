@@ -30,7 +30,7 @@
 
   --feesh-size: calc(12vw + 100px);
   --ocean-base-metric: calc(1vw + 50px);
-  --feesh-bottom: 15vh;
+  --feesh-bottom: 25vh;
   --floor-offset: 0px;
 
   --bezier: cubic-bezier(0,.5,0,1);
@@ -183,7 +183,7 @@ a:hover:after {
   z-index: 19;
   position: absolute;
   display: block;
-  margin: 100px 50px;
+  margin: 50px 50px;
 }
 
 /* 5. Hero
@@ -224,13 +224,21 @@ a:hover:after {
 #ocean-floor {
   width: 5000px;
   position: absolute;
-  bottom: -0;
+  bottom: 0px;
   z-index: 3;
+}
+
+#sand {
+  position: absolute;
+  width: 7750px;
+  height: 450px;
+  left: -100px;
+  bottom: -100px;
+  z-index: -30;
 }
 
 .light-coral {
   position: absolute;
-  bottom: calc(var(--floor-offset) - 5px);
   transform-origin: 50% 100% 0;
   z-index: -10;
 }
@@ -238,52 +246,55 @@ a:hover:after {
 #light-coral-1 {
   width: 475px;
   height: 490px;
+  bottom: calc(var(--floor-offset) - 5px);
   animation: sway-alternate 17s alternate infinite;
-  left: calc(var(--ocean-base-metric) * 3.5);
-  background-image: url(../assets/light-coral-1.png);
+  left: calc(var(--ocean-base-metric) * 5.5);
 }
 
 #light-coral-2 {
-  width: 450px;
-  height: 450px;
+  width: 423px;
+  height: 437px;
+  bottom: 0px;
   animation: sway-alternate 20s alternate infinite;
-  left: calc(var(--ocean-base-metric) * 12);
-  background-image: url(../assets/light-coral-2.png);
+  left: calc(var(--ocean-base-metric) * 11);
 }
 
 .dark-coral {
   position: absolute;
   height: auto;
-  width: 475px;
   z-index: -15;
-  bottom: calc(var(--floor-offset) - 5px);
+  bottom: 0px;
   transform-origin: 50% 100% 0;
   animation: sway 13s infinite;
 }
 
 #dark-coral-1 {
+  width: 420px;
+  height: 603px;
+  bottom: calc(var(--floor-offset) + 20px);
   animation: sway 10s infinite;
   left: calc(var(--ocean-base-metric) * .1);
-  background-image: url(../assets/dark-coral-1.png);
 }
 
-.dark-coral-2 {
+#dark-coral-2 {
+  width: 420px;
+  height: 603px;
+  bottom: calc(var(--floor-offset) + 25px);
   animation: sway 13s infinite;
   left: calc(var(--ocean-base-metric) * 14);
-  background-image: url(../assets/dark-coral-2.png);
 }
 
 .polyps {
-  bottom: 0;
   position: absolute;
-  width: 190px;
-  height: auto;
   z-index: -1;
 }
 
 #polyps-1 {
-  left: calc(var(--ocean-base-metric) * 2);
-  background-image: url(../assets/polyps.png);
+  width: 160px;
+  height: 200px;
+  bottom: calc(var(--floor-offset) + 20px);
+  left: calc(var(--ocean-base-metric) * 3.5);
+  
 }
 
 @keyframes sway {
@@ -302,23 +313,21 @@ a:hover:after {
 #ocean-background-bubbles {
   width: 5000px;
   position: absolute;
-  width: 100%;
-  height: auto;
   z-index: -20;
 }
 
 .ocean-bubbles {
-  width: 600px;
-  height: auto;
-  z-index: -25;
+  position: absolute;
 }
 
 #ocean-bubbles-1 {
+  height: 1062px;
+  width: 594px;
   left: calc(var(--ocean-base-metric) * .5);
-  background-image: url(../assets/ocean-bubbles-1.png);
 }
 
 #ocean-bubbles-2 {
+  height: 1062px;
+  width: 594px;
   left: calc(var(--ocean-base-metric) * 13);
-  background-image: url(../assets/ocean-bubbles-2.png);
 }
