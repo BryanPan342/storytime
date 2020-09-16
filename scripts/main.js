@@ -11,27 +11,31 @@ function addDims(element) {
 
 function storeImgs() {
   for (var e = document.getElementsByTagName('img'), t = 0; t < e.length; t++){
-    "ocean-bubbles" === e[t].getAttribute('class') && ocean_bubbles.push(e[t]) && addDims(e[t]),
-    "light-coral" === e[t].getAttribute('class') && light_corals.push(e[t]) && addDims(e[t]),
-    "dark-coral" === e[t].getAttribute('class') && dark_corals.push(e[t]) && addDims(e[t]),
-    "polyps" === e[t].getAttribute('class') && polypses.push(e[t]) && addDims(e[t]);
+    const et = e[t];
+    "feesh" === et.getAttribute('class') && (feesh = et) && addDims(et),
+    "ocean-bubbles" === et.getAttribute('class') && ocean_bubbles.push(et) && addDims(et),
+    "light-coral" === et.getAttribute('class') && light_corals.push(et) && addDims(et),
+    "dark-coral" === et.getAttribute('class') && dark_corals.push(et) && addDims(et),
+    "polyps" === et.getAttribute('class') && polypses.push(et) && addDims(et);
   }
 }
 
 function storeDivs() {
   for (var e = document.getElementsByTagName('div'), t = 0; t < e.length; t++) {
-    "layer" === e[t].getAttribute('class') && layers.push(e[t]) && addDims(e[t]);
+    const et = e[t];
+    "layer" === et.getAttribute('class') && layers.push(et) && addDims(et);
   }
 }
 
 var maxDimsForIds = new Object;
 var classMultipliers = {
+  'feesh': .25,
   'ocean-bubbles': 1,
   'light-coral': .54,
   'dark-coral': .54,
   'polyps': .20,
 };
-var layers = new Array, ocean_bubbles = new Array, light_corals = new Array, dark_corals = new Array, polypses = new Array;
+var layers = new Array, feesh, ocean_bubbles = new Array, light_corals = new Array, dark_corals = new Array, polypses = new Array;
 
 function resize() {
   console.log('resizing');

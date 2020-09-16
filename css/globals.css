@@ -28,7 +28,6 @@
   --text-offset: calc(100vw / 20);
   --text-margins: 10px 0px;
 
-  --feesh-size: calc(12vw + 100px);
   --ocean-base-metric: calc(1vw + 50px);
   --feesh-bottom: 25vh;
   --floor-offset: 0px;
@@ -50,7 +49,6 @@
     --text-offset: calc(100vw / 20);
     --text-margins: 5px 0px;
   
-    --feesh-size: calc(12vw + 100px);
     --ocean-base-metric: calc(1vw + 50px);
     --feesh-bottom: 30vh;
     --floor-offset: 0px;
@@ -198,7 +196,8 @@ a:hover:after {
 }
 
 .feesh {
-  height: var(--feesh-size);
+  width: 320px;
+  height: 230px;
   margin: auto auto var(--feesh-bottom) auto;
 }
 
