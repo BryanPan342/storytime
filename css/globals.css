@@ -178,7 +178,7 @@ a:hover:after {
 /* ---------------------------------------------------------- */
 
 .title {
-  z-index: 19;
+  z-index: 100;
   position: absolute;
   display: block;
   margin: 50px 50px;
@@ -245,9 +245,9 @@ a:hover:after {
 #light-coral-1 {
   width: 475px;
   height: 490px;
-  bottom: calc(var(--floor-offset) - 5px);
+  bottom: calc(var(--floor-offset) - 85px);
   animation: sway-alternate 17s alternate infinite;
-  left: calc(var(--ocean-base-metric) * 5.5);
+  left: calc(var(--ocean-base-metric) * 4.5);
 }
 
 #light-coral-2 {
@@ -255,22 +255,20 @@ a:hover:after {
   height: 437px;
   bottom: 0px;
   animation: sway-alternate 20s alternate infinite;
-  left: calc(var(--ocean-base-metric) * 11);
+  left: calc(var(--ocean-base-metric) * 10);
 }
 
 .dark-coral {
   position: absolute;
-  height: auto;
   z-index: -15;
   bottom: 0px;
   transform-origin: 50% 100% 0;
-  animation: sway 13s infinite;
 }
 
 #dark-coral-1 {
   width: 420px;
   height: 603px;
-  bottom: calc(var(--floor-offset) + 20px);
+  bottom: calc(var(--floor-offset) + 60px);
   animation: sway 10s infinite;
   left: calc(var(--ocean-base-metric) * .1);
 }
@@ -292,7 +290,7 @@ a:hover:after {
   width: 160px;
   height: 200px;
   bottom: calc(var(--floor-offset) + 20px);
-  left: calc(var(--ocean-base-metric) * 3.5);
+  left: calc(var(--ocean-base-metric) * 3);
   
 }
 
