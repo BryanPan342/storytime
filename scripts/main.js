@@ -3,7 +3,10 @@ function min(a, b) {
 }
 
 function addDims(element) {
-  maxDimsForIds[element.getAttribute('id')] = { 'width': element.offsetWidth, 'height': element.offsetHeight };
+  const height = element.offsetHeight;
+  const width = element.offsetWidth;
+  const widthMultiplier = width / height;
+  maxDimsForIds[element.getAttribute('id')] = {'width': width, 'widthMultiplier': widthMultiplier, 'height': height };
 }
 
 function storeImgs() {
@@ -24,9 +27,9 @@ function storeDivs() {
 var maxDimsForIds = new Object;
 var classMultipliers = {
   'ocean-bubbles': 1,
-  'light-coral': .74,
-  'dark-coral': .74,
-  'polyps': .266,
+  'light-coral': .54,
+  'dark-coral': .54,
+  'polyps': .20,
 };
 var layers = new Array, ocean_bubbles = new Array, light_corals = new Array, dark_corals = new Array, polypses = new Array;
 
@@ -35,11 +38,14 @@ function resize() {
   Object.keys(maxDimsForIds).map((key) => {
     const e = maxDimsForIds[key];
     let element = document.getElementById(key);
+    
     console.log(element);
     const m = classMultipliers[element.getAttribute('class')];
     if (m) {
-      element.style.width = `${min(e['width'], screen.width * m)}px`;
-      element.style.height = `${min(e['height'], screen.height* m)}px`;
+      const calc_height = window.innerHeight * m;
+      const calc_width = calc_height * e.widthMultiplier;
+      element.style.width = `${min(e.width, calc_width)}px`;
+      element.style.height = `${min(e.height, calc_height)}px`;
     }
   });
 }
