@@ -31,7 +31,7 @@
   --text-margins: 10px 0px;
 
   --ocean-base-metric: calc(1vw + 50px);
-  --feesh-bottom: 25vh;
+  --feesh-bottom: 30vh;
   --floor-offset: 0px;
 
   --bezier: cubic-bezier(0,.5,0,1);
@@ -290,11 +290,17 @@ a:hover:after {
 }
 
 #polyps-1 {
-  width: 160px;
-  height: 200px;
+  width: 198px;
+  height: 257px;
   bottom: calc(var(--floor-offset) + 20px);
   left: calc(var(--ocean-base-metric) * 3);
-  
+}
+
+#polyps-2 {
+  width: 115px;
+  height: 122px;
+  bottom: calc(var(--floor-offset));
+  left: calc(var(--ocean-base-metric) * 14.5);
 }
 
 @keyframes sway {

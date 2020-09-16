@@ -35,7 +35,7 @@ var classMultipliers = {
   'ocean-bubbles': 1,
   'light-coral': .54,
   'dark-coral': .54,
-  'polyps': .20,
+  'polyps': .225,
 };
 var feesh, layers = rocks = ocean_bubbles = light_corals = dark_corals = polypses = new Array;
 
@@ -49,8 +49,10 @@ function resize() {
     const m = classMultipliers[element.getAttribute('class')];
     if (m) {
       let calc_height;
-      if(key == 'rocks-1') {
+      if (key == 'rocks-1') {
         calc_height =  window.innerHeight;
+      } else if (key == 'polyps-2') {
+        calc_height = window.innerHeight * .15;
       } else {
         calc_height = window.innerHeight * m;
       }
