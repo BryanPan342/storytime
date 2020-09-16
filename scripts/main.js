@@ -1,13 +1,13 @@
-function min(a, b) {
-  return a < b ? a : b;
-}
+function min(a, b) { return a < b ? a : b; };
+function enableScroll() { canScroll = true; }
+function disableScroll() { canScroll = false; }
 
 function addDims(element) {
   const height = element.offsetHeight;
   const width = element.offsetWidth;
   const widthMultiplier = width / height;
   maxDimsForIds[element.getAttribute('id')] = {'width': width, 'widthMultiplier': widthMultiplier, 'height': height };
-}
+};
 
 function storeImgs() {
   for (var e = document.getElementsByTagName('img'), t = 0; t < e.length; t++){
@@ -19,33 +19,19 @@ function storeImgs() {
     "dark-coral" === et.getAttribute('class') && dark_corals.push(et) && addDims(et),
     "polyps" === et.getAttribute('class') && polypses.push(et) && addDims(et);
   }
-}
+};
 
 function storeDivs() {
   for (var e = document.getElementsByTagName('div'), t = 0; t < e.length; t++) {
     const et = e[t];
     "layer" === et.getAttribute('class') && layers.push(et) && addDims(et);
   }
-}
-
-var maxDimsForIds = new Object;
-var classMultipliers = {
-  'feesh': .25,
-  'rocks': .8,
-  'ocean-bubbles': 1,
-  'light-coral': .54,
-  'dark-coral': .54,
-  'polyps': .225,
 };
-var feesh, layers = rocks = ocean_bubbles = light_corals = dark_corals = polypses = new Array;
 
 function resize() {
-  console.log('resizing');
   Object.keys(maxDimsForIds).map((key) => {
     const e = maxDimsForIds[key];
     let element = document.getElementById(key);
-    
-    console.log(element);
     const m = classMultipliers[element.getAttribute('class')];
     if (m) {
       let calc_height;
@@ -61,16 +47,38 @@ function resize() {
       element.style.height = `${min(e.height, calc_height)}px`;
     }
   });
+};
+function scroll(d){
+  delta = delta - d;
+  if(delta < 0) delta = 0;
+  console.log(delta);
+  layers.map((layer) => {
+    layer.style.left = `${layerSpeeds[layer.getAttribute('id')] * -1 * delta}px`;
+  });
+};
+var layerSpeeds = {
+  'text': 1,
+  'ocean-floor': 1,
+  'ocean-rocks': .5,
+  'ocean-bubbles': .3,
 }
+var classMultipliers = {
+  'feesh': .25,
+  'rocks': .8,
+  'ocean-bubbles': 1,
+  'light-coral': .54,
+  'dark-coral': .54,
+  'polyps': .225,
+};
+var maxDimsForIds = new Object;
+var layers = rocks = ocean_bubbles = light_corals = dark_corals = polypses = new Array;
+var canScroll, feesh, delta = 0;
 
+disableScroll(),
 window.onload = function() {
-  storeDivs(), storeImgs(), resize();
-}
+  storeDivs(), storeImgs(), resize(), enableScroll();
+},
+window.onwheel = function(e) {
+  canScroll && scroll(e.wheelDelta);
+},
 window.onresize = resize;
-
-// function handleScroll() {
-//   var scrollLeft = window.pageXOffset;
-//   document.getElementById("ocean-background-bubbles").style.left = `${scrollLeft*.5}px`;
-// };
-
-// window.addEventListener('scroll', handleScroll, { passive: true });
