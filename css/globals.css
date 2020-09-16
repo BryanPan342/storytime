@@ -42,8 +42,8 @@
     --healthy-background: linear-gradient(180deg, #47B2EE 0%, rgba(255, 255, 255, 0) 100%), #0F5FAF;
     --bleached-background: linear-gradient(180deg, #8DC3E2 0%, rgba(255, 255, 255, 0) 100%), #3A638C;
    
-    --header-size: 36px;
-    --info-size: 16px;
+    --header-size: 40px;
+    --info-size: 18px;
     --font-color: #ffffff;
     --underlay-offest: 4px;
     --healthy-font-underlay: #1261B0;
@@ -355,11 +355,11 @@ a:hover:after {
 #ocean-bubbles-1 {
   height: 1062px;
   width: 594px;
-  left: calc(var(--ocean-base-metric) * 2.5);
+  left: calc(var(--ocean-base-metric) * 3.5);
 }
 
 #ocean-bubbles-2 {
   height: 1062px;
   width: 594px;
-  left: calc(var(--ocean-base-metric) * 14);
+  left: calc(var(--ocean-base-metric) * 15);
 }
