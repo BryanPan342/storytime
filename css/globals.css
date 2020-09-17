@@ -186,8 +186,8 @@ a:hover:after {
 
 .title {
   position: absolute;
-  display: block;
   margin: 50px 50px;
+  width: calc(100vw - 100px);
 }
 
 /* 5. Hero
