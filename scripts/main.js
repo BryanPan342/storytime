@@ -1,6 +1,22 @@
 function min(a, b) { return a < b ? a : b; };
 function enableScroll() { canScroll = true; }
 function disableScroll() { canScroll = false; }
+function touchStart(e) {
+  console.log('hello')
+  startTouchPosition = e.targetTouches[0].pageY;
+}
+function touchMove(e) {
+  canScroll && scroll((e.targetTouches[0].pageY - startTouchPosition) /3);
+}
+function touchEnd(e) {
+  e.preventDefault();
+  startTouchPosition = 0;
+}
+function initTouchEvents() {
+  document.addEventListener("touchstart", touchStart, !1),
+  document.addEventListener("touchmove", touchMove, !1),
+  document.addEventListener("touchEnd", touchEnd, !1);
+}
 
 function addDims(element) {
   const height = element.offsetHeight;
@@ -72,11 +88,11 @@ var classMultipliers = {
 };
 var maxDimsForIds = new Object;
 var layers = rocks = ocean_bubbles = light_corals = dark_corals = polypses = new Array;
-var canScroll, feesh, delta = 0;
+var canScroll, feesh, startTouchPosition = delta = 0;
 
 disableScroll(),
 window.onload = function() {
-  storeDivs(), storeImgs(), resize(), enableScroll();
+  storeDivs(), storeImgs(), resize(), initTouchEvents(), enableScroll();
 },
 window.onwheel = function(e) {
   canScroll && scroll(e.wheelDelta);
