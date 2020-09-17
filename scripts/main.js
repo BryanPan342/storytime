@@ -59,7 +59,7 @@ function scroll(d){
 var layerSpeeds = {
   'text': 1,
   'ocean-floor': 1,
-  'ocean-rocks': .5,
+  'ocean-rocks': .4,
   'ocean-bubbles': .3,
 }
 var classMultipliers = {
