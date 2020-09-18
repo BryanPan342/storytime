@@ -67,7 +67,7 @@ function resize() {
 function scroll(d){
   delta = delta - d;
   if(delta < 0) delta = 0;
-  else if( delta > 10000) delta = 10000;
+  else if(delta > 9000) delta = 9000;
   console.log(delta);
   layers.map((layer) => {
     layer.style.left = `${layerSpeeds[layer.getAttribute('id')] * -1 * delta}px`;
