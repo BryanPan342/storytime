@@ -6,7 +6,7 @@ function touchStart(e) {
   startTouchPosition = e.targetTouches[0].pageY;
 }
 function touchMove(e) {
-  canScroll && scroll((e.targetTouches[0].pageY - startTouchPosition) /3);
+  canScroll && scroll((e.targetTouches[0].pageY - startTouchPosition) / 5);
 }
 function touchEnd(e) {
   e.preventDefault();
