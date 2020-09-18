@@ -95,8 +95,16 @@ body::-webkit-scrollbar {
   color: var(--font-color);
   letter-spacing: 0.05em;
   transform: translateX(-20%);
+}
+
+.header-animation {
   animation: fadeIn 1s 1s forwards var(--bezier),
               animateRight 1.5s 1s forwards var(--bezier);
+}
+
+.text-animation {
+  animation: fadeIn 2s 1.5s forwards var(--bezier), 
+              animateRight 2s 1.5s forwards var(--bezier);
 }
 
 .info {
@@ -107,8 +115,6 @@ body::-webkit-scrollbar {
   font-size: var(--info-size);
   color: var(--font-color);
   transform: translateX(-20%);
-  animation: fadeIn 2s 1.5s forwards var(--bezier), 
-              animateRight 2s 1.5s forwards var(--bezier);
 }
 
 .info:nth-child(2) {

@@ -28,19 +28,23 @@ function addDims(element) {
 function storeImgs() {
   for (var e = document.getElementsByTagName('img'), t = 0; t < e.length; t++){
     const et = e[t];
-    "feesh" === et.getAttribute('class') && (feesh = et) && addDims(et),
-    "rocks" === et.getAttribute('class') && rocks.push(et) && addDims(et),
-    "ocean-bubbles" === et.getAttribute('class') && ocean_bubbles.push(et) && addDims(et),
-    "light-coral" === et.getAttribute('class') && light_corals.push(et) && addDims(et),
-    "dark-coral" === et.getAttribute('class') && dark_corals.push(et) && addDims(et),
-    "polyps" === et.getAttribute('class') && polypses.push(et) && addDims(et);
+    const div_class = et.getAttribute('class');
+    "feesh" === div_class && (feesh = et) && addDims(et),
+    "rocks" === div_class && rocks.push(et) && addDims(et),
+    "ocean-bubbles" === div_class && ocean_bubbles.push(et) && addDims(et),
+    "light-coral" === div_class && light_corals.push(et) && addDims(et),
+    "dark-coral" === div_class && dark_corals.push(et) && addDims(et),
+    "polyps" === div_class && polypses.push(et) && addDims(et);
   }
 };
 
 function storeDivs() {
   for (var e = document.getElementsByTagName('div'), t = 0; t < e.length; t++) {
     const et = e[t];
-    "layer" === et.getAttribute('class') && layers.push(et) && addDims(et);
+    const div_class = et.getAttribute('class');
+    const id_class = et.getAttribute('id');
+    "layer" === div_class && layers.push(et) && addDims(et),
+    "text" === div_class && (texts[id_class] = et) && (isAnimated[id_class] = false);
   }
 };
 
@@ -64,15 +68,35 @@ function resize() {
     }
   });
 };
+
+function animateFirstText() {
+  addAnimationToInfo('title');
+}
+
+async function addAnimationToInfo(id) {
+  console.log(id);
+  const div = texts[id];
+  if(isAnimated[id]) return;
+  Array.from(div.children).map((child, i) => i == 0 ? child.classList.add('header-animation') : child.classList.add('text-animation'));
+  isAnimated[id] = true;
+}
+
 function scroll(d){
   delta = delta - d;
-  if(delta < 0) delta = 0;
-  else if(delta > 9000) delta = 9000;
   console.log(delta);
+  if(delta < 0) delta = 0;
+  else if(500 < delta && delta < 1500){ addAnimationToInfo('whatisit'); }
+  else if(1500 < delta && delta < 2500){ addAnimationToInfo('causes'); }
+  else if(2500 < delta && delta < 5000){ addAnimationToInfo('important'); }
+  else if(5000 < delta && delta < 7000){ addAnimationToInfo('prevent'); }
+  else if(7000 < delta && delta < 9000){ addAnimationToInfo('save'); }
+  else if(delta > 9000) delta = 9000;
+
   layers.map((layer) => {
     layer.style.left = `${layerSpeeds[layer.getAttribute('id')] * -1 * delta}px`;
   });
 };
+
 var layerSpeeds = {
   'info-text': 1,
   'ocean-floor': 1,
@@ -87,13 +111,13 @@ var classMultipliers = {
   'dark-coral': .54,
   'polyps': .225,
 };
-var maxDimsForIds = new Object;
+var isAnimated = new Object, texts = new Object, maxDimsForIds = new Object;
 var layers = rocks = ocean_bubbles = light_corals = dark_corals = polypses = new Array;
 var canScroll, feesh, startTouchPosition = delta = 0;
 
 disableScroll(),
 window.onload = function() {
-  storeDivs(), storeImgs(), resize(), initTouchEvents(), enableScroll();
+  storeDivs(), storeImgs(), resize(), animateFirstText(), initTouchEvents(), enableScroll();
 },
 window.onwheel = function(e) {
   canScroll && scroll(e.wheelDelta);
