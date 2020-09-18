@@ -29,6 +29,7 @@
   --bleached-font-underlay: #3C658D;
   --text-offset: calc(100vw / 20);
   --text-margins: 10px 0px;
+  --text-width: calc(60vw);
 
   --ocean-base-metric: calc(1vw + 50px);
   --feesh-bottom: 30vh;
@@ -50,6 +51,7 @@
     --bleached-font-underlay: #3C658D;
     --text-offset: calc(100vw / 20);
     --text-margins: 5px 0px;
+    --text-width: calc(100vw - 100px);
   
     --ocean-base-metric: calc(1vw + 50px);
     --feesh-bottom: 30vh;
@@ -178,16 +180,40 @@ a:hover:after {
 /* 4. Title
 /* ---------------------------------------------------------- */
 
-#text{
+#info-text {
   width: var(--global-width);
   position: absolute;
   z-index: 100;
 }
 
-.title {
+.text {
+  width: var(--text-width);
   position: absolute;
   margin: 50px 50px;
-  width: calc(100vw - 100px);
+}
+
+#title {
+  left: 0px;
+}
+
+#whatisit {
+  left: 2000px;
+}
+
+#causes {
+  left: 3500px;
+}
+
+#important {
+  left: 5200px;
+}
+
+#prevent {
+  left: 7500px;
+}
+
+#save {
+  left: 9000px;
 }
 
 /* 5. Hero

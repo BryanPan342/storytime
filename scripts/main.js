@@ -67,13 +67,14 @@ function resize() {
 function scroll(d){
   delta = delta - d;
   if(delta < 0) delta = 0;
+  else if( delta > 10000) delta = 10000;
   console.log(delta);
   layers.map((layer) => {
     layer.style.left = `${layerSpeeds[layer.getAttribute('id')] * -1 * delta}px`;
   });
 };
 var layerSpeeds = {
-  'text': 1,
+  'info-text': 1,
   'ocean-floor': 1,
   'ocean-rocks': .4,
   'ocean-bubbles': .3,
