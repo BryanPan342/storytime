@@ -179,10 +179,6 @@ a:after {
   transition: right .4s var(--bezier);
 }
 
-a:hover:after {
-  right: 0;
-}
-
 /* 4. Title
 /* ---------------------------------------------------------- */
 
