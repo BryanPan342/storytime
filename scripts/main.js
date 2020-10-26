@@ -2,7 +2,6 @@ function min(a, b) { return a < b ? a : b; };
 function enableScroll() { canScroll = true; }
 function disableScroll() { canScroll = false; }
 function touchStart(e) {
-  console.log('hello')
   startTouchPosition = e.targetTouches[0].pageY;
 }
 function touchMove(e) {
