@@ -19,7 +19,7 @@
   --healthy-background: linear-gradient(180deg, #47B2EE 0%, rgba(255, 255, 255, 0) 100%), #0F5FAF;
   --bleached-background: linear-gradient(180deg, #8DC3E2 0%, rgba(255, 255, 255, 0) 100%), #3A638C;
  
-  --global-width: 10000px;
+  --global-width: 12000px;
 
   --header-size: 72px;
   --info-size: 24px;
@@ -203,19 +203,19 @@ a:after {
 }
 
 #causes {
-  left: 3500px;
+  left: 4000px;
 }
 
 #important {
-  left: 5200px;
+  left: 6000px;
 }
 
 #prevent {
-  left: 7500px;
+  left: 8000px;
 }
 
 #save {
-  left: 9000px;
+  left: 10000px;
 }
 
 /* 5. Hero

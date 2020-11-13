@@ -85,11 +85,11 @@ function scroll(d){
   console.log(delta);
   if(delta < 0) delta = 0;
   else if(500 < delta && delta < 1500){ addAnimationToInfo('whatisit'); }
-  else if(1500 < delta && delta < 2500){ addAnimationToInfo('causes'); }
-  else if(2500 < delta && delta < 5000){ addAnimationToInfo('important'); }
-  else if(5000 < delta && delta < 7000){ addAnimationToInfo('prevent'); }
-  else if(7000 < delta && delta < 9000){ addAnimationToInfo('save'); }
-  else if(delta > 9000) delta = 9000;
+  else if(2000 < delta && delta < 3500){ addAnimationToInfo('causes'); }
+  else if(3500 < delta && delta < 5500){ addAnimationToInfo('important'); }
+  else if(5500 < delta && delta < 7500){ addAnimationToInfo('prevent'); }
+  else if(7500 < delta && delta < 10000){ addAnimationToInfo('save'); }
+  else if(delta > 10000) delta = 10000;
 
   layers.map((layer) => {
     layer.style.left = `${layerSpeeds[layer.getAttribute('id')] * -1 * delta}px`;
