@@ -355,19 +355,18 @@ a:after {
 }
 
 .rocks {
+  bottom: calc(var(--floor-offset) - 200px);
   position: absolute;
   transform-origin: 50% 180% 0;
 }
 
 #rocks-1 {
-  top: calc(30vh);
   height: 1027px;
   width: 1002px;
   left: calc(var(--ocean-base-metric) - 250px);
 }
 
 #rocks-2 {
-  top: calc(30vh);
   bottom: calc(var(--floor-offset) - 50px);
   height: 680px;
   width: 815px;
@@ -381,6 +380,7 @@ a:after {
 }
 
 .ocean-bubbles {
+  bottom: 0;
   position: absolute;
 }
 
