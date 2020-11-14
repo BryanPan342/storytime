@@ -206,6 +206,13 @@ a:after {
   left: 4000px;
 }
 
+.cause {
+  z-index: -1;
+  margin: 15px;
+  width: 198px;
+  height: 204px;
+}
+
 #important {
   left: 6000px;
 }

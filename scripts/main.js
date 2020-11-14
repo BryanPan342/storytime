@@ -33,7 +33,8 @@ function storeImgs() {
     "ocean-bubbles" === div_class && ocean_bubbles.push(et) && addDims(et),
     "light-coral" === div_class && light_corals.push(et) && addDims(et),
     "dark-coral" === div_class && dark_corals.push(et) && addDims(et),
-    "polyps" === div_class && polypses.push(et) && addDims(et);
+    "polyps" === div_class && polypses.push(et) && addDims(et),
+    "cause" === div_class && causes.push(et) && addDims(et);
   }
 };
 
@@ -53,6 +54,7 @@ function resize() {
     let element = document.getElementById(key);
     const m = classMultipliers[element.getAttribute('class')];
     if (m) {
+      console.log(element)
       let calc_height;
       if (key == 'rocks-1') {
         calc_height =  window.innerHeight;
@@ -108,9 +110,11 @@ var classMultipliers = {
   'light-coral': .54,
   'dark-coral': .54,
   'polyps': .225,
+  'cause': .2,
 };
+
 var isAnimated = new Object, texts = new Object, maxDimsForIds = new Object;
-var layers = rocks = ocean_bubbles = light_corals = dark_corals = polypses = new Array;
+var layers = new Array, rocks = new Array, ocean_bubbles = new Array, light_corals = new Array, dark_corals = new Array, polypses = new Array, causes = new Array;
 var canScroll, feesh, startTouchPosition = delta = 0;
 
 disableScroll(),
