@@ -73,7 +73,6 @@ function animateFirstText() {
 }
 
 async function addAnimationToInfo(id) {
-  console.log(id);
   const div = texts[id];
   if(isAnimated[id]) return;
   Array.from(div.children).map((child, i) => i == 0 ? child.classList.add('header-animation') : child.classList.add('text-animation'));
@@ -82,13 +81,13 @@ async function addAnimationToInfo(id) {
 
 function scroll(d){
   delta = delta - d;
-  console.log(delta);
+
   if(delta < 0) delta = 0;
-  else if(500 < delta && delta < 1500){ addAnimationToInfo('whatisit'); }
-  else if(2000 < delta && delta < 3500){ addAnimationToInfo('causes'); }
-  else if(3500 < delta && delta < 5500){ addAnimationToInfo('important'); }
-  else if(5500 < delta && delta < 7500){ addAnimationToInfo('prevent'); }
-  else if(7500 < delta && delta < 10000){ addAnimationToInfo('save'); }
+  else if(!isAnimated['whatisit'] && 500 < delta && delta < 1500){ addAnimationToInfo('whatisit'); }
+  else if(!isAnimated['causes'] && 2000 < delta && delta < 3500){ addAnimationToInfo('causes'); }
+  else if(!isAnimated['important'] && 3500 < delta && delta < 5500){ addAnimationToInfo('important'); }
+  else if(!isAnimated['prevent'] && 5500 < delta && delta < 7500){ addAnimationToInfo('prevent'); }
+  else if(!isAnimated['whatisit'] && 7500 < delta && delta < 10000){ addAnimationToInfo('save'); }
   else if(delta > 10000) delta = 10000;
 
   layers.map((layer) => {

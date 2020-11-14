@@ -373,6 +373,13 @@ a:after {
   left: calc(var(--ocean-base-metric) * 8);
 }
 
+#rocks-3 {
+  bottom: calc(var(--floor-offset) - 100px);
+  height: 1002px;
+  width: 1028px;
+  left: calc(var(--ocean-base-metric) * 25);
+}
+
 #ocean-bubbles {
   width: var(--global-width);
   position: absolute;
