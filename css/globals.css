@@ -335,6 +335,20 @@ a:after {
   left: calc(var(--ocean-base-metric) * 14.5);
 }
 
+#ded-polyps-1 {
+  width: 188px;
+  height: 254px;
+  bottom: calc(var(--floor-offset) + 60px);
+  left: calc(var(--ocean-base-metric) * 33);
+}
+
+#ded-polyps-2 {
+  width: 188px;
+  height: 254px;
+  bottom: calc(var(--floor-offset) - 20px);
+  left: calc(var(--ocean-base-metric) * 43);
+}
+
 @keyframes sway {
   0%, 100%{ transform: rotate(-3deg);}
   50%{ transform: rotate(3deg); }

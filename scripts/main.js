@@ -87,7 +87,7 @@ function scroll(d){
   else if(!isAnimated['causes'] && 2000 < delta && delta < 3500){ addAnimationToInfo('causes'); }
   else if(!isAnimated['important'] && 3500 < delta && delta < 5500){ addAnimationToInfo('important'); }
   else if(!isAnimated['prevent'] && 5500 < delta && delta < 7500){ addAnimationToInfo('prevent'); }
-  else if(!isAnimated['whatisit'] && 7500 < delta && delta < 10000){ addAnimationToInfo('save'); }
+  else if(!isAnimated['save'] && 7500 < delta && delta < 10000){ addAnimationToInfo('save'); }
   else if(delta > 10000) delta = 10000;
 
   layers.map((layer) => {
