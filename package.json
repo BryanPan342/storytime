@@ -1,0 +1,27 @@
+{
+  "name": "storytime",
+  "version": "1.0.0",
+  "description": "a story by Bryan Pan and Sam Chai on behalf of Bloom!",
+  "scripts": {
+    "start": "python3 -m http.server",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanPan342/storytime.git"
+  },
+  "author": "Bryan Pan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BryanPan342/storytime/issues"
+  },
+  "homepage": "https://github.com/BryanPan342/storytime#readme",
+  "dependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify-es": "^2.0.0"
+  }
+}
