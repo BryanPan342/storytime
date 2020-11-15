@@ -34,6 +34,7 @@ function storeImgs() {
     "light-coral" === div_class && light_corals.push(et) && addDims(et),
     "dark-coral" === div_class && dark_corals.push(et) && addDims(et),
     "polyps" === div_class && polypses.push(et) && addDims(et),
+    "ded-polyps" === div_class && polypses.push(et) && addDims(et),
     "cause" === div_class && causes.push(et) && addDims(et);
   }
 };
@@ -109,6 +110,7 @@ var classMultipliers = {
   'light-coral': .54,
   'dark-coral': .54,
   'polyps': .225,
+  'ded-polyps': .35,
   'cause': .2,
 };
 

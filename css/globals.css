@@ -277,6 +277,9 @@ a:after {
   z-index: -30;
 }
 
+/* 7.1 Title
+/* ---------------------------------------------------------- */
+
 .light-coral {
   position: absolute;
   transform-origin: 50% 100% 0;
@@ -342,16 +345,22 @@ a:after {
   left: calc(var(--ocean-base-metric) * 14.5);
 }
 
-#ded-polyps-1 {
+/* 7.2 what is it?
+/* ---------------------------------------------------------- */
+
+.ded-polyps {
+  position: absolute;
+  z-index: -1;
   width: 188px;
   height: 254px;
+}
+
+#ded-polyps-1 {
   bottom: calc(var(--floor-offset) + 60px);
   left: calc(var(--ocean-base-metric) * 33);
 }
 
 #ded-polyps-2 {
-  width: 188px;
-  height: 254px;
   bottom: calc(var(--floor-offset) - 20px);
   left: calc(var(--ocean-base-metric) * 43);
 }
@@ -388,6 +397,102 @@ a:after {
   animation: sway 13s infinite;
   left: calc(var(--ocean-base-metric) * 45);
 }
+
+/* 7.3 causes of bleaching
+/* ---------------------------------------------------------- */
+
+#ded-polyps-bed-1 {
+  z-index: -3;
+  bottom: calc(var(--floor-offset) + 120px);
+  left: calc(var(--ocean-base-metric) * 60);
+}
+
+#ded-polyps-bed-2 {
+  z-index: -1;
+  bottom: calc(var(--floor-offset));
+  left: calc(var(--ocean-base-metric) * 60.5);
+}
+
+#ded-polyps-bed-3 {
+  z-index: -2;
+  bottom: calc(var(--floor-offset) + 80px);
+  left: calc(var(--ocean-base-metric) * 62);
+}
+
+#ded-polyps-bed-4 {
+  z-index: -1;
+  bottom: calc(var(--floor-offset) - 10px);
+  left: calc(var(--ocean-base-metric) * 63);
+}
+
+#ded-polyps-bed-5 {
+  z-index: -3;
+  bottom: calc(var(--floor-offset) + 100px);
+  left: calc(var(--ocean-base-metric) * 64);
+}
+
+#ded-polyps-bed-6 {
+  transform: rotate(3deg);
+  z-index: -1;
+  bottom: calc(var(--floor-offset) - 15px);
+  left: calc(var(--ocean-base-metric) * 65.5);
+}
+
+#ded-polyps-bed-7 {
+  transform: rotate(3deg);
+  z-index: -2;
+  bottom: calc(var(--floor-offset) + 10px);
+  left: calc(var(--ocean-base-metric) * 67);
+}
+
+#ded-polyps-bed-8 {
+  transform: rotate(8deg);
+  z-index: -3;
+  bottom: calc(var(--floor-offset) + 95px);
+  left: calc(var(--ocean-base-metric) * 68);
+}
+
+#ded-polyps-bed-9 {
+  transform: rotate(12deg);
+  z-index: -1;
+  bottom: calc(var(--floor-offset) - 30px);
+  left: calc(var(--ocean-base-metric) * 69);
+}
+
+#ded-polyps-bed-10 {
+  z-index: -2;
+  bottom: calc(var(--floor-offset) -15px);
+  left: calc(var(--ocean-base-metric) * 70.5);
+}
+
+#ded-polyps-bed-11 {
+  transform: rotate(10deg);
+  z-index: -3;
+  bottom: calc(var(--floor-offset) + 95px);
+  left: calc(var(--ocean-base-metric) * 71.5);
+}
+
+#ded-polyps-bed-12 {
+  transform: rotate(6deg);
+  z-index: -1;
+  bottom: calc(var(--floor-offset) -25px);
+  left: calc(var(--ocean-base-metric) * 73);
+}
+
+#ded-polyps-bed-13 {
+  z-index: -3;
+  bottom: calc(var(--floor-offset) + 130px);
+  left: calc(var(--ocean-base-metric) * 74);
+}
+
+#ded-polyps-bed-14 {
+  z-index: -2;
+  bottom: calc(var(--floor-offset) - 5px);
+  left: calc(var(--ocean-base-metric) * 74.5);
+}
+
+/* 7.8 Ocean Floor Animations
+/* ---------------------------------------------------------- */
 
 @keyframes sway {
   0%, 100%{ transform: rotate(-3deg);}
