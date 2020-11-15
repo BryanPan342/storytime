@@ -35,6 +35,7 @@ function storeImgs() {
     "dark-coral" === div_class && dark_corals.push(et) && addDims(et),
     "polyps" === div_class && polypses.push(et) && addDims(et),
     "ded-polyps" === div_class && polypses.push(et) && addDims(et),
+    "anemone" === div_class && anemones.push(et) && addDims(et),
     "cause" === div_class && causes.push(et) && addDims(et);
   }
 };
@@ -87,8 +88,8 @@ function scroll(d){
   if(delta < 0) delta = 0;
   else if(!isAnimated['whatisit'] && 500 < delta && delta < 1500){ addAnimationToInfo('whatisit'); }
   else if(!isAnimated['causes'] && 2000 < delta && delta < 3500){ addAnimationToInfo('causes'); }
-  else if(!isAnimated['important'] && 3500 < delta && delta < 5500){ addAnimationToInfo('important'); }
-  else if(!isAnimated['prevent'] && 5500 < delta && delta < 7500){ addAnimationToInfo('prevent'); }
+  else if(!isAnimated['important'] && 3500 < delta && delta < 5000){ addAnimationToInfo('important'); }
+  else if(!isAnimated['prevent'] && 5000 < delta && delta < 7500){ addAnimationToInfo('prevent'); }
   else if(!isAnimated['save'] && 7500 < delta && delta < 10000){ addAnimationToInfo('save'); }
   else if(delta > 10000) delta = 10000;
 
@@ -111,11 +112,12 @@ var classMultipliers = {
   'dark-coral': .54,
   'polyps': .225,
   'ded-polyps': .35,
+  'anemone': .3,
   'cause': .2,
 };
 
 var isAnimated = new Object, texts = new Object, maxDimsForIds = new Object;
-var layers = new Array, rocks = new Array, ocean_bubbles = new Array, light_corals = new Array, dark_corals = new Array, polypses = new Array, causes = new Array;
+var layers = new Array, rocks = new Array, ocean_bubbles = new Array, light_corals = new Array, dark_corals = new Array, polypses = new Array, anemones = new Array, causes = new Array;
 var canScroll, feesh, startTouchPosition = delta = 0;
 
 disableScroll(),

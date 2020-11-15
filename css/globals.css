@@ -214,7 +214,7 @@ a:after {
 }
 
 #important {
-  left: 6000px;
+  left: 5500px;
 }
 
 #prevent {
@@ -491,7 +491,153 @@ a:after {
   left: calc(var(--ocean-base-metric) * 74.5);
 }
 
-/* 7.8 Ocean Floor Animations
+/* 7.4 causes of bleaching
+/* ---------------------------------------------------------- */
+
+.anemone {
+  width: 188px;
+  height: 282px;
+  position: absolute;
+}
+
+#dark-pink-coral-3 {
+  width: 420px;
+  height: 603px;
+  bottom: calc(var(--floor-offset) + 200px);
+  animation: sway 8s infinite;
+  left: calc(var(--ocean-base-metric) * 82);
+}
+
+#anemone-1 {
+  z-index: -1;
+  bottom: calc(var(--floor-offset) - 80px);
+  left: calc(var(--ocean-base-metric) * 84);
+}
+
+#polyps-3 {
+  z-index: -2;
+  width: 198px;
+  height: 257px;
+  bottom: calc(var(--floor-offset) + 115px);
+  left: calc(var(--ocean-base-metric) * 86.2);
+}
+
+#anemone-2 {
+  z-index: -3;
+  bottom: calc(var(--floor-offset) + 120px);
+  left: calc(var(--ocean-base-metric) * 86);
+}
+
+#polyps-4 {
+  z-index: -1;
+  width: 115px;
+  height: 122px;
+  bottom: calc(var(--floor-offset) - 20px);
+  left: calc(var(--ocean-base-metric) * 87);
+}
+
+#light-pink-coral-3 {
+  width: 475px;
+  height: 490px;
+  z-index: 5;
+  bottom: calc(var(--floor-offset) - 100px);
+  animation: sway-alternate 12s alternate infinite;
+  left: calc(var(--ocean-base-metric) * 87);
+}
+
+#polyps-5 {
+  z-index: -1;
+  width: 115px;
+  height: 122px;
+  bottom: calc(var(--floor-offset) - 40px);
+  left: calc(var(--ocean-base-metric) * 91);
+  transform: scaleX(-1);
+}
+
+#polyps-6 {
+  z-index: -12;
+  width: 198px;
+  height: 257px;
+  bottom: calc(var(--floor-offset) + 180px);
+  left: calc(var(--ocean-base-metric) * 95.5);
+  transform: rotate(-5deg) scaleX(-1);
+}
+
+#anemone-3 {
+  z-index: -13;
+  bottom: calc(var(--floor-offset) + 180px);
+  left: calc(var(--ocean-base-metric) * 96);
+}
+
+#polyps-7 {
+  z-index: -2;
+  width: 115px;
+  height: 122px;
+  bottom: calc(var(--floor-offset) - 20px);
+  left: calc(var(--ocean-base-metric) * 96.5);
+}
+
+#anemone-4 {
+  z-index: -1;
+  bottom: calc(var(--floor-offset) - 100px);
+  left: calc(var(--ocean-base-metric) * 98);
+}
+
+#polyps-8 {
+  z-index: -2;
+  width: 198px;
+  height: 257px;
+  bottom: calc(var(--floor-offset) + 80px);
+  left: calc(var(--ocean-base-metric) * 99);
+}
+
+#light-pink-coral-4 {
+  width: 423px;
+  height: 437px;
+  bottom: calc(var(--floor-offset) + 80px);
+  animation: sway-alternate 15s alternate infinite;
+  left: calc(var(--ocean-base-metric) * 95);
+}
+
+#polyps-9 {
+  z-index: 0;
+  width: 115px;
+  height: 122px;
+  bottom: calc(var(--floor-offset) - 10px);
+  left: calc(var(--ocean-base-metric) * 100);
+}
+
+#polyps-10 {
+  z-index: -16;
+  width: 115px;
+  height: 122px;
+  bottom: calc(var(--floor-offset) + 260px);
+  left: calc(var(--ocean-base-metric) * 100.5);
+}
+
+#dark-pink-coral-4 {
+  width: 420px;
+  height: 603px;
+  bottom: calc(var(--floor-offset) + 200px);
+  animation: sway-alternate 7s infinite;
+  left: calc(var(--ocean-base-metric) * 99);
+}
+
+#polyps-11 {
+  z-index: -2;
+  width: 198px;
+  height: 257px;
+  bottom: calc(var(--floor-offset) + 90px);
+  left: calc(var(--ocean-base-metric) * 101.5);
+}
+
+#anemone-5 {
+  z-index: -1;
+  bottom: calc(var(--floor-offset) - 60px);
+  left: calc(var(--ocean-base-metric) * 102);
+}
+
+/* 7.5 Ocean Floor Animations
 /* ---------------------------------------------------------- */
 
 @keyframes sway {
