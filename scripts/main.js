@@ -54,7 +54,6 @@ function resize() {
     let element = document.getElementById(key);
     const m = classMultipliers[element.getAttribute('class')];
     if (m) {
-      console.log(element)
       let calc_height;
       if (key == 'rocks-1') {
         calc_height =  window.innerHeight;

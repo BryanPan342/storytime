@@ -5,7 +5,7 @@ var del = require('del');
 var csso = require('gulp-csso');
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
-var uglify = require('gulp-uglify-es').default;;
+var uglify = require('gulp-uglify-es').default;
 
 // Gulp task to minify CSS files
 function styles(cb) {
@@ -15,7 +15,7 @@ function styles(cb) {
     // Minify the file
     .pipe(csso())
     // Output
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('dist/css'));
   cb();
 }
 
@@ -25,7 +25,7 @@ function scripts(cb) {
     // Minify the file
     .pipe(uglify())
     // Output
-    .pipe(gulp.dest('dist/scripts/js'));
+    .pipe(gulp.dest('dist/scripts'));
   cb();
 }
 
@@ -36,7 +36,13 @@ function pages(cb) {
       collapseWhitespace: true,
       removeComments: true
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('dist'));
+  cb();
+}
+
+function assets(cb) {
+  gulp.src('assets/*')
+    .pipe(gulp.dest('dist/assets'));
   cb();
 }
 
@@ -47,4 +53,6 @@ function clean(cb) {
 }
 
 // Gulp task to minify all files
-exports.default = gulp.series(clean, styles, scripts, pages);
+exports.clean = clean;
+exports.build = gulp.series(clean, assets, styles, scripts, pages);
+exports.default = gulp.series(clean, assets, styles, scripts, pages);
