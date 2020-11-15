@@ -283,7 +283,7 @@ a:after {
   z-index: -10;
 }
 
-#light-coral-1 {
+#light-pink-coral-1 {
   width: 475px;
   height: 490px;
   z-index: 5;
@@ -292,7 +292,7 @@ a:after {
   left: calc(var(--ocean-base-metric) * 4.5);
 }
 
-#light-coral-2 {
+#light-pink-coral-2 {
   width: 423px;
   height: 437px;
   bottom: 0px;
@@ -307,7 +307,7 @@ a:after {
   transform-origin: 50% 100% 0;
 }
 
-#dark-coral-1 {
+#dark-pink-coral-1 {
   width: 420px;
   height: 603px;
   bottom: calc(var(--floor-offset) + 60px);
@@ -315,7 +315,7 @@ a:after {
   left: calc(var(--ocean-base-metric) * .1);
 }
 
-#dark-coral-2 {
+#dark-pink-coral-2 {
   width: 420px;
   height: 603px;
   bottom: calc(var(--floor-offset) + 25px);
@@ -354,6 +354,39 @@ a:after {
   height: 254px;
   bottom: calc(var(--floor-offset) - 20px);
   left: calc(var(--ocean-base-metric) * 43);
+}
+
+#light-grey-coral-1 {
+  width: 475px;
+  height: 490px;
+  z-index: 5;
+  bottom: calc(var(--floor-offset) - 100px);
+  animation: sway-alternate 17s alternate infinite;
+  left: calc(var(--ocean-base-metric) * 36);
+}
+
+#light-grey-coral-2 {
+  width: 475px;
+  height: 490px;
+  bottom: calc(var(--floor-offset) + 60px);
+  animation: sway-alternate 20s alternate infinite;
+  left: calc(var(--ocean-base-metric) * 41);
+}
+
+#dark-grey-coral-1 {
+  width: 430px;
+  height: 618px;
+  bottom: calc(var(--floor-offset) + 80px);
+  animation: sway 10s infinite;
+  left: calc(var(--ocean-base-metric) * 33);
+}
+
+#dark-grey-coral-2 {
+  width: 471px;
+  height: 676px;
+  bottom: calc(var(--floor-offset) + 100px);
+  animation: sway 13s infinite;
+  left: calc(var(--ocean-base-metric) * 45);
 }
 
 @keyframes sway {
