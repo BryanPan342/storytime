@@ -29,6 +29,8 @@ function storeImgs() {
     const et = e[t];
     const div_class = et.getAttribute('class');
     "feesh" === div_class && (feesh = et) && addDims(et),
+    "clownfish" === div_class && clownfishes.push(et) && addDims(et),
+    "fish" === div_class && fishes.push(et) && addDims(et),
     "rocks" === div_class && rocks.push(et) && addDims(et),
     "ocean-bubbles" === div_class && ocean_bubbles.push(et) && addDims(et),
     "light-coral" === div_class && light_corals.push(et) && addDims(et),
@@ -85,6 +87,9 @@ async function addAnimationToInfo(id) {
 function scroll(d){
   delta = delta - d;
 
+  if (d < 0) feesh.id = 'feesh-forward';
+  else feesh.id = 'feesh-backward';
+
   if(delta < 0) delta = 0;
   else if(!isAnimated['whatisit'] && 500 < delta && delta < 1500){ addAnimationToInfo('whatisit'); }
   else if(!isAnimated['causes'] && 2000 < delta && delta < 3500){ addAnimationToInfo('causes'); }
@@ -101,11 +106,15 @@ function scroll(d){
 var layerSpeeds = {
   'info-text': 1,
   'ocean-floor': 1,
+  'ocean-fishes-forward': .4,
+  'ocean-fishes-backward': 1.15,
   'ocean-rocks': .4,
   'ocean-bubbles': .3,
 }
 var classMultipliers = {
   'feesh': .25,
+  'clownfish': .15,
+  'fish': .75,
   'rocks': .8,
   'ocean-bubbles': 1,
   'light-coral': .54,
@@ -117,7 +126,9 @@ var classMultipliers = {
 };
 
 var isAnimated = new Object, texts = new Object, maxDimsForIds = new Object;
-var layers = new Array, rocks = new Array, ocean_bubbles = new Array, light_corals = new Array, dark_corals = new Array, polypses = new Array, anemones = new Array, causes = new Array;
+var layers = new Array, rocks = new Array, ocean_bubbles = new Array, 
+    light_corals = new Array, dark_corals = new Array, polypses = new Array,
+    anemones = new Array, clownfishes = new Array, fishes = new Array, causes = new Array;
 var canScroll, feesh, startTouchPosition = delta = 0;
 
 disableScroll(),

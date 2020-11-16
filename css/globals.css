@@ -7,8 +7,14 @@
 4.  Title
 5.  Hero
 6.  Ocean
-7.  Ocean Floor
-8.  Ocean Background
+8.  Ocean Floor
+  8.1  Title
+  8.2  what is it?
+  8.3  causes of bleaching
+  8.4  why is it important?
+  8.5  Ocean Floor Animations
+9.  Ocean Rocks
+10. Ocean Bubbles
 
 */
 
@@ -242,6 +248,10 @@ a:after {
   margin: auto auto var(--feesh-bottom) auto;
 }
 
+#feesh-backward {
+  transform: scaleX(-1);
+}
+
 /* 6. Ocean
 /* ---------------------------------------------------------- */
 
@@ -258,7 +268,83 @@ a:after {
   height: 100vh;
 }
 
-/* 7. Ocean Floor
+/* 7. Ocean Fishes
+/* ---------------------------------------------------------- */
+
+.fish {
+  width: 77px;
+  height: 46px;
+  position: absolute;
+  z-index: 4;
+  bottom: 0px;
+}
+
+#ocean-fishes-forward {
+  width: var(--global-width);
+  position: absolute;
+  bottom: 0px;
+  z-index: 4;
+}
+
+#health-fish-forward-1 {
+  z-index: 10;
+  left: 500px;
+  bottom: calc(var(--floor-offset) + 200px)
+}
+
+#unhealth-fish-forward-1 {
+  z-index: 12;
+  left: 1500px;
+  bottom: calc(var(--floor-offset) + 150px)
+}
+
+#unhealth-fish-forward-2 {
+  left: 1700px;
+  bottom: calc(var(--floor-offset) + 200px)
+}
+
+#unhealth-fish-forward-3 {
+  left: 2000px;
+  bottom: calc(var(--floor-offset) + 400px)
+}
+
+.clownfish {
+  width: 326px;
+  height: 196px;
+  position: absolute;
+}
+
+#black-clownfish-forward-1 {
+  z-index: 10;
+  left: 3000px;
+  bottom: calc(var(--floor-offset) + 200px)
+}
+
+#ocean-fishes-backward {
+  width: var(--global-width);
+  position: absolute;
+  bottom: 0px;
+  z-index: 4;
+}
+
+#health-fish-backward-1 {
+  left: 1000px;
+  bottom: calc(var(--floor-offset) + 300px)
+}
+
+#unhealth-fish-backward-1 {
+  z-index: 2;
+  left: 2800px;
+  bottom: calc(var(--floor-offset) + 100px)
+}
+
+#unhealth-fish-backward-2 {
+  z-index: -10;
+  left: 4800px;
+  bottom: calc(var(--floor-offset) + 300px)
+}
+
+/* 8. Ocean Floor
 /* ---------------------------------------------------------- */
 
 #ocean-floor {
@@ -277,7 +363,7 @@ a:after {
   z-index: -30;
 }
 
-/* 7.1 Title
+/* 8.1 Title
 /* ---------------------------------------------------------- */
 
 .light-coral {
@@ -345,7 +431,7 @@ a:after {
   left: calc(var(--ocean-base-metric) * 14.5);
 }
 
-/* 7.2 what is it?
+/* 8.2 what is it?
 /* ---------------------------------------------------------- */
 
 .ded-polyps {
@@ -398,7 +484,7 @@ a:after {
   left: calc(var(--ocean-base-metric) * 45);
 }
 
-/* 7.3 causes of bleaching
+/* 8.3 causes of bleaching
 /* ---------------------------------------------------------- */
 
 #ded-polyps-bed-1 {
@@ -491,7 +577,7 @@ a:after {
   left: calc(var(--ocean-base-metric) * 74.5);
 }
 
-/* 7.4 causes of bleaching
+/* 8.4 why is it important?
 /* ---------------------------------------------------------- */
 
 .anemone {
@@ -637,7 +723,7 @@ a:after {
   left: calc(var(--ocean-base-metric) * 102);
 }
 
-/* 7.5 Ocean Floor Animations
+/* 8.5 Ocean Floor Animations
 /* ---------------------------------------------------------- */
 
 @keyframes sway {
@@ -650,7 +736,7 @@ a:after {
   50%{ transform: rotate(-3deg); }
 }
 
-/* 8. Ocean Background
+/* 9. Ocean Rocks
 /* ---------------------------------------------------------- */
 
 #ocean-rocks {
@@ -684,6 +770,9 @@ a:after {
   width: 1028px;
   left: calc(var(--ocean-base-metric) * 25);
 }
+
+/* 10. Ocean Bubbles
+/* ---------------------------------------------------------- */
 
 #ocean-bubbles {
   width: var(--global-width);
